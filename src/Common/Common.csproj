@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>A package for an interpolated data table with support for different interpolation strategies.</Description>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!--https://developercommunity.visualstudio.com/content/problem/30940/cant-remove-netstandard-folder-from-output-path.html-->
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
+    <!-- .Net projects -->
+    <BaseSolutionPath>$(MSBuildThisFileDirectory)</BaseSolutionPath>
+    <BaseIntermediateOutputPath>$(BaseSolutionPath)../build/$(MSBuildProjectName)/obj/</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Platform)/$(Configuration)/$(TargetFramework)/</IntermediateOutputPath>
+    <OutputPath>$(BaseSolutionPath)../build/$(MSBuildProjectName)/bin/$(Platform)/$(Configuration)/$(TargetFramework)/</OutputPath>
+
+    <!-- Use locked restore on CI server for reproducible package stuff -->
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+
+</Project>
